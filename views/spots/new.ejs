@@ -1,0 +1,83 @@
+<% layout('layouts/boilerplate') %>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <h1 align="center">New Spots</h1>
+    <div class="card shadow">
+      <div class="card-body">
+        <form
+          action="/spots"
+          method="POST"
+          novalidate
+          class="validated-form"
+          enctype="multipart/form-data"
+        >
+          <div class="mb-3">
+            <label class="form-label" for="title">Title</label>
+            <input
+              class="form-control"
+              type="text"
+              name="spot[title]"
+              id="title"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="location">Location</label>
+            <input
+              class="form-control"
+              type="text"
+              name="spot[location]"
+              id="location"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="wondrous">Spot Wondrous</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="price-label">#</span>
+              <input type="text" class="form-control" id="wondrous"
+              placeholder="0 to 100" //aria-label="Price"//
+              //aria-describedby="price-label"// name="spot[wondrous]" required
+              />
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="description">Description</label>
+            <textarea
+              class="form-control"
+              type="text"
+              name="spot[description]"
+              id="description"
+              required
+            ></textarea>
+            <div class="valid-feedback">Looks good!</div>
+          </div>
+          <div class="mb-3">
+            <div class="form-file custom-file">
+              <input
+                type="file"
+                class="form-file-input"
+                id="image"
+                name="image"
+                multiple
+              />
+              <label class="form-file-label" for="image">
+                <!-- <span class="form-file-text custom-file-label"
+                  >Choose image(s)...</span
+                >
+                <span class="form-file-button">Browse</span> -->
+              </label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-success">Add Spot</button>
+          </div>
+        </form>
+        <footer><a href="/spots">All Spots</a></footer>
+      </div>
+    </div>
+  </div>
+</div>
