@@ -3,8 +3,7 @@ const Spot = require("../models/spot");
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 const mapBoxToken = process.env.MAPBOX_TOKEN;
 const geocoder = mbxGeocoding({ accessToken: mapBoxToken });
-const moment = require("moment");
-const tz = require("moment-timezone");
+const moment = require("moment-timezone");
 // let timezone = "Asia/Tokyo"
 
 module.exports.index = async (req, res) => {

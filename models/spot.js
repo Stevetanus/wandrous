@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Review = require("./review");
-const moment = require("moment");
-const tz = require("moment-timezone");
+
+const moment = require("moment-timezone");
 
 const opts = { toJSON: { virtuals: true } };
 
