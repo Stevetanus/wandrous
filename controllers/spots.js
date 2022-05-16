@@ -64,7 +64,7 @@ module.exports.renderEditForm = async (req, res) => {
 
 module.exports.updateSpot = async (req, res) => {
   const { id } = req.params;
-  req.body.spot.updateAt = moment().format();
+  req.body.spot.updateAt = moment().tz("Asia/Taipei").format();
   const spot = await Spot.findByIdAndUpdate(
     id,
     { ...req.body.spot },
