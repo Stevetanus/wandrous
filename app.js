@@ -20,8 +20,7 @@ const userRoutes = require("./routes/users");
 const spotRoutes = require("./routes/spots");
 const reviewRoutes = require("./routes/reviews");
 const MongoStore = require("connect-mongo");
-const moment = require("moment");
-moment.locale("zh-cn");
+
 //  mongoose
 const mongoose = require("mongoose");
 const dbUrl = process.env.DB_URL;

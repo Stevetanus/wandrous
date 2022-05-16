@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Review = require("./review");
 const moment = require("moment");
-moment.locale("zh-cn");
+const tz = require("moment-timezone");
 
 const opts = { toJSON: { virtuals: true } };
 
@@ -48,7 +48,7 @@ const SpotSchema = new Schema(
     ],
     createAt: {
       type: String,
-      default: moment().format(),
+      default: moment().tz("Asia/Taipei").format(),
     },
     tz: {
       type: String,

@@ -4,7 +4,8 @@ const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 const mapBoxToken = process.env.MAPBOX_TOKEN;
 const geocoder = mbxGeocoding({ accessToken: mapBoxToken });
 const moment = require("moment");
-moment.locale("zh-cn");
+const tz = require("moment-timezone");
+// let timezone = "Asia/Tokyo"
 
 module.exports.index = async (req, res) => {
   const spots = await Spot.find({});
@@ -27,7 +28,7 @@ module.exports.createSpot = async (req, res, next) => {
   spot.geometry = geoData.body.features[0].geometry;
   spot.images = req.files.map((f) => ({ url: f.path, filename: f.filename }));
   spot.author = req.user._id;
-  spot.createAt = moment().format();
+  spot.createAt = moment().tz("Asia/Taipei").format();
   await spot.save();
   // console.log(spot);
   req.flash("success", "Successfully made a new spot!");
